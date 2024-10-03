@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cspeqlvur3eyt"]
+
+[resource]
+albedo_color = Color(0.701961, 1, 1, 1)
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 0.5
+rim = 0.0
+rim_tint = 0.0
+backlight_enabled = true
+backlight = Color(0, 0.630345, 0.463745, 1)

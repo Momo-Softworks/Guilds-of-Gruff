@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b12q2kgigl0f2"]
+
+[ext_resource type="Script" path="res://entity/UnitHandler.cs" id="1_34i5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_edngf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnslb"]
+albedo_color = Color(0.564706, 0.396078, 0.596078, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dnojm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aajv6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gke2m"]
+transparency = 1
+albedo_color = Color(0, 0.933333, 0.964706, 0.490196)
+
+[node name="Unit" type="CharacterBody3D" groups=["selectable", "units"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_34i5j")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_edngf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_jnslb")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dnojm")
+
+[node name="Selector" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 0.001, 0, 0, 0, 2.5, 0, 0.0619562, 0)
+visible = false
+mesh = SubResource("CylinderMesh_aajv6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gke2m")
+
+[node name="Navigator" type="NavigationAgent3D" parent="."]
+simplify_path = true
+avoidance_enabled = true
+height = 2.0
+radius = 4.0
+neighbor_distance = 10.0
+avoidance_layers = 3

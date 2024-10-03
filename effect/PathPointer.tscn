@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxhhtokvm7xip"]
+
+[ext_resource type="Material" uid="uid://cspeqlvur3eyt" path="res://effect/PathPointer.tres" id="1_by057"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uaa7d"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_jy85a"]
+inner_radius = 0.706
+outer_radius = 0.841
+
+[node name="PathPointer" type="Node3D"]
+transform = Transform3D(1.48944, 0, 0, 0, 1.48944, 0, 0, 0, 1.48944, 0, 0, 0)
+
+[node name="Pointer" type="Node3D" parent="."]
+transform = Transform3D(0.265414, 0, 0, 0, 2.81944, 0, 0, 0, -0.368368, 0, 0.56496, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Pointer"]
+transform = Transform3D(0.510549, 5.967e-08, 0.510549, -0.150028, 0.147398, 0.150028, 0.209878, 0.427248, -0.209878, 0, 0.0327803, 0)
+material_override = ExtResource("1_by057")
+mesh = SubResource("BoxMesh_uaa7d")
+skeleton = NodePath("../..")
+
+[node name="Circle" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.791314, 0, 0, 0, 0.0122619, 0, 0, 0, 0.791314, 0, 0.00533795, 0)
+material_override = ExtResource("1_by057")
+mesh = SubResource("TorusMesh_jy85a")
