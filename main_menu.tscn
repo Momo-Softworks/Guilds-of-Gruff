@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ni0uhumux3i"]
+
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_5mumc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5mumc")
+
+[node name="Singleplayer" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.494
+anchor_right = 0.444
+anchor_bottom = 0.494
+offset_left = -399.488
+offset_top = -40.112
+offset_right = -159.488
+offset_bottom = 39.888
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.492
+anchor_right = 0.5
+anchor_bottom = 0.492
+offset_left = -120.0
+offset_top = -38.816
+offset_right = 121.0
+offset_bottom = 41.184
+text = "Multiplayer"
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.556
+anchor_top = 0.494
+anchor_right = 0.556
+anchor_bottom = 0.494
+offset_left = 159.488
+offset_top = -40.112
+offset_right = 391.488
+offset_bottom = 39.888
+text = "Options"
+
+[connection signal="pressed" from="Singleplayer" to="." method="singleplayerPressed"]
