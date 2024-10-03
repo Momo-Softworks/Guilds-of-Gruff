@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5ni0uhumux3i"]
 
-[ext_resource type="Script" path="res://MainMenu.cs" id="1_5mumc"]
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_r1re5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5mumc")
+script = ExtResource("1_r1re5")
 
 [node name="Singleplayer" type="Button" parent="."]
 layout_mode = 1
@@ -51,3 +51,4 @@ offset_bottom = 39.888
 text = "Options"
 
 [connection signal="pressed" from="Singleplayer" to="." method="singleplayerPressed"]
+[connection signal="pressed" from="Multiplayer" to="." method="multiplayerPressed"]
